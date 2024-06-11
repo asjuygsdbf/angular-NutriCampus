@@ -1,0 +1,23 @@
+
+.custom-shape-divider-top-1715240484 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  svg {
+    position: relative;
+    display: block;
+    width: calc(130% + 1.3px);
+    height: 106px;
+  }
+  .shape-fill {
+    fill: white;
+  }
+}
+
+footer {
+  background-color: #ade1ae; /* Establece el color de fondo del footer */
+}
+
