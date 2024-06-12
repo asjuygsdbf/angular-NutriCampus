@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {HomeComponent} from "./home/home.component";
@@ -18,6 +18,19 @@ import { ContactComponent } from './contact/contact.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'angular-NutriCampus';
+export class AppComponent implements OnInit{
+  title = 'Nutricampus'
+  mostrar = true
+
+  mostrarHeaderAndFooter(){
+    console.log(document.URL)
+    if(document.URL == 'http://localhost:4200/login' || document.URL == 'http://localhost:4200/registro' ){
+      this.mostrar = false
+    }
+  }
+
+  ngOnInit(): void {
+    this.mostrarHeaderAndFooter()
+  }
+
 }
