@@ -9,7 +9,7 @@ let previosTitle = document.title;
 
 window.addEventListener('blur', () =>{
   previosTitle = document.title
-  document.title = 'No te vayas sonso'
+  document.title = 'No abandones el cronograma!!'
 })
 
 window.addEventListener('focus', () =>{
