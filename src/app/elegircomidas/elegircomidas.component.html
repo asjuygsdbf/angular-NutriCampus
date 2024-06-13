@@ -9,6 +9,14 @@
 <body>
 <section class="h-screen bg-gray-100 px-4 text-gray-600 antialiased">
   <div class="flex h-full flex-col justify-center">
+
+    <!-- Title and Subtitle -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-gray-800">¡Comienza a crear tu dieta!</h1>
+      <h2 class="text-xl text-gray-600">Selecciona las comidas y ajusta las raciones para planificar tu dieta, en caso no se encuentre alguna, puedes crearlas en la parte superior</h2>
+    </div>
+
+
     <!-- Table -->
     <div class="mx-auto w-full max-w-4xl rounded-sm border border-gray-200 bg-white shadow-lg">
       <header class="border-b border-gray-100 px-5 py-4">
@@ -146,79 +154,6 @@
               <input type="checkbox" class="h-5 w-5" value="id-3" />
             </td>
             <td class="p-2">
-              <div class="font-medium text-gray-800">Ensalada blanca con pollo</div>
-            </td>
-            <td class="p-2">
-              <input type="number" class="p-2 w-full" placeholder="1" />
-            </td>
-            <td class="p-2">
-              <div class="text-left font-medium text-green-500">180 kl</div>
-            </td>
-            <td class="p-2">
-              <input type="date" class="border p-2 w-full" />
-            </td>
-            <td class="p-2">
-              <div class="flex justify-center space-x-2">
-                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
-
-              </div>
-            </td>
-          </tr>
-
-
-          <tr>
-            <td class="p-2">
-              <input type="checkbox" class="h-5 w-5" value="id-3" />
-            </td>
-            <td class="p-2">
-              <div class="font-medium text-gray-800">Jugo de frutas verdes</div>
-            </td>
-            <td class="p-2">
-              <input type="number" class="p-2 w-full" placeholder="1" />
-            </td>
-            <td class="p-2">
-              <div class="text-left font-medium text-green-500">180 kl</div>
-            </td>
-            <td class="p-2">
-              <input type="date" class="border p-2 w-full" />
-            </td>
-            <td class="p-2">
-              <div class="flex justify-center space-x-2">
-                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
-
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="p-2">
-              <input type="checkbox" class="h-5 w-5" value="id-3" />
-            </td>
-            <td class="p-2">
-              <div class="font-medium text-gray-800">Postre de avena</div>
-            </td>
-            <td class="p-2">
-              <input type="number" class="p-2 w-full" placeholder="1" />
-            </td>
-            <td class="p-2">
-              <div class="text-left font-medium text-green-500">180 kl</div>
-            </td>
-            <td class="p-2">
-              <input type="date" class="border p-2 w-full" />
-            </td>
-            <td class="p-2">
-              <div class="flex justify-center space-x-2">
-                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
-
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="p-2">
-              <input type="checkbox" class="h-5 w-5" value="id-3" />
-            </td>
-            <td class="p-2">
               <div class="font-medium text-gray-800">Tacos de lechuga con pollo</div>
             </td>
             <td class="p-2">
@@ -241,10 +176,10 @@
           <tr>
             <td class="p-2"></td>
             <td class="p-2">
-              <input type="text" class="border p-2 w-full" placeholder="Nombre de la comida" />
+              <input type="text" class="border p-2 w-full" placeholder="Comida" />
             </td>
             <td class="p-2">
-              <input type="number" class="border p-2 w-full" placeholder="Cantidad" />
+              <input type="text" class="border p-2 w-full" placeholder="Ingredientes" />
             </td>
             <td class="p-2">
               <input type="number" class="border p-2 w-full" placeholder="Calorías" />
@@ -270,6 +205,12 @@
         <div>Calorías totales: </div>
         <div class="text-blue-600">0.00</div>
       </div>
+
+      <div class="flex justify-end p-4">
+        <button class="bg-purple-500 text-white px-4 py-2 rounded">Crear mi dieta</button>
+      </div>
+
+
     </div>
   </div>
 </section>
