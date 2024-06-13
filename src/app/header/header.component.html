@@ -41,16 +41,17 @@
         <div class="h-0.5 bg-green scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full duration-300 ease-out absolute bottom-0 left-0 right-0"></div>
       </a>
     </nav>
-    <a href="/login" class="inline-flex items-center bg-green-200 border py-1 px-3 focus:outline-none hover:bg-green-300 rounded text-base mt-4 md:mt-0 font-bold">
-      Iniciar sesión
+    <a class="inline-flex items-center bg-green-200 border py-1 px-3 focus:outline-none hover:bg-green-300 rounded text-base mt-4 md:mt-0 font-bold hover:cursor-pointer" (click)="cerrarSesion()">
+      <span *ngIf="user.nombreUsuario == ''">
+        Iniciar sesión
+      </span>
+      <span *ngIf="user.nombreUsuario != ''">
+        {{ user.nombreUsuario }}
+      </span>
       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
     </a>
-
-
-
-
   </div>
 </header>
 
