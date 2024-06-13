@@ -7,6 +7,7 @@ import { LoginComponent } from './auth/login/login.component';
 import {SignupComponent} from "./auth/signup/signup.component";
 import {FormsComponent} from "./forms/forms.component";
 import {ContactComponent} from "./contact/contact.component";
+import {BotonesComponent} from "./botones/botones.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -16,5 +17,7 @@ export const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: SignupComponent},
   {path: 'paso1', component: FormsComponent},
-  {path: 'contacto', component: ContactComponent}
+  {path: 'contacto', component: ContactComponent},
+  {path: 'principal', component: BotonesComponent}
+
 ];
