@@ -9,6 +9,14 @@
 <body>
 <section class="h-screen bg-gray-100 px-4 text-gray-600 antialiased">
   <div class="flex h-full flex-col justify-center">
+
+    <!-- Title and Subtitle -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-gray-800">¡Comienza a crear tu dieta!</h1>
+      <h2 class="text-xl text-gray-600">Selecciona las comidas y ajusta las raciones para planificar tu dieta, en caso no se encuentre alguna, puedes crearlas en la parte superior</h2>
+    </div>
+
+
     <!-- Table -->
     <div class="mx-auto w-full max-w-4xl rounded-sm border border-gray-200 bg-white shadow-lg">
       <header class="border-b border-gray-100 px-5 py-4">
@@ -40,12 +48,12 @@
 
           <tbody class="divide-y divide-gray-100 text-sm">
           <!-- Product 1 -->
-          <tr *ngFor="let comidaa of comidas">
+          <tr>
             <td class="p-2">
               <input type="checkbox" class="h-5 w-5" value="id-1" />
             </td>
             <td class="p-2">
-              <div class="font-medium text-gray-800">{{ comidaa.nombre }}</div>
+              <div class="font-medium text-gray-800">Ensalada César</div>
             </td>
             <td class="p-2">
               <input type="number" class="p-2 w-full" placeholder="1" />
@@ -63,14 +71,115 @@
               </div>
             </td>
           </tr>
+
+          <!-- Product 2 -->
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-2" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Batido de Proteínas</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">205 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+              </div>
+          </tr>
+
+          <!-- Product 3 -->
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-3" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Quinoa con Verduras</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">100</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+
+              </div>
+            </td>
+          </tr>
+
+          <!-- Product 4 -->
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-3" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Batido de fresa</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">180 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+
+              </div>
+            </td>
+          </tr>
+
+
+          <!-- Product 5 -->
+
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-3" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Tacos de lechuga con pollo</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">250 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+
+              </div>
+            </td>
+          </tr>
           <!-- Add product row -->
           <tr>
             <td class="p-2"></td>
             <td class="p-2">
-              <input type="text" class="border p-2 w-full" placeholder="Nombre de la comida" />
+              <input type="text" class="border p-2 w-full" placeholder="Comida" />
             </td>
             <td class="p-2">
-              <input type="number" class="border p-2 w-full" placeholder="Cantidad" />
+              <input type="text" class="border p-2 w-full" placeholder="Ingredientes" />
             </td>
             <td class="p-2">
               <input type="number" class="border p-2 w-full" placeholder="Calorías" />
@@ -78,9 +187,7 @@
             <td class="p-2">
               <input type="date" class="border p-2 w-full" />
             </td>
-            <td class="p-2">
-              <input type="date" class="border p-2 w-full" />
-            </td>
+
             <td class="p-2">
               <div class="flex justify-center">
                 <button class="bg-blue-500 text-white px-4 py-2 rounded">Agregar</button>
@@ -96,6 +203,12 @@
         <div>Calorías totales: </div>
         <div class="text-blue-600">0.00</div>
       </div>
+
+      <div class="flex justify-end p-4">
+        <button class="bg-purple-500 text-white px-4 py-2 rounded">Crear mi dieta</button>
+      </div>
+
+
     </div>
   </div>
 </section>

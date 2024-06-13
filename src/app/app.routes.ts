@@ -10,6 +10,8 @@ import {ContactComponent} from "./contact/contact.component";
 import {BotonesComponent} from "./botones/botones.component";
 import {PasoRutinaComponent} from "./paso-rutina/paso-rutina.component";
 import {ElegircomidasComponent} from "./elegircomidas/elegircomidas.component";
+import {CalendarioComponent} from "./calendario/calendario.component";
+import {DenegadoComponent} from "./denegado/denegado.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,6 +24,7 @@ export const routes: Routes = [
   {path: 'contacto', component: ContactComponent},
   {path: 'principal', component: BotonesComponent},
   {path: 'mirutina', component: PasoRutinaComponent},
-  {path: 'elegircomidas', component: ElegircomidasComponent}
-
+  {path: 'elegircomidas', component: ElegircomidasComponent},
+  {path: 'calendario', component: CalendarioComponent},
+  {path: '404', component: DenegadoComponent}
 ];

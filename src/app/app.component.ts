@@ -12,13 +12,16 @@ import {ContactComponent } from './contact/contact.component';
 import {BotonesComponent} from "./botones/botones.component";
 import {PasoRutinaComponent} from "./paso-rutina/paso-rutina.component";
 import {ElegircomidasComponent} from "./elegircomidas/elegircomidas.component";
+import {CalendarioComponent} from "./calendario/calendario.component";
+import {DenegadoComponent} from "./denegado/denegado.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, FooterComponent, HomeComponent,
     EjerciciosComponent, CommonModule, LoginComponent, SignupComponent,
-    FormsComponent, ContactComponent, BotonesComponent, PasoRutinaComponent, ElegircomidasComponent],
+    FormsComponent, ContactComponent, BotonesComponent, PasoRutinaComponent,
+    ElegircomidasComponent, CalendarioComponent, DenegadoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
