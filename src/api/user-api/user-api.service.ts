@@ -57,7 +57,7 @@ export class UserApiService {
 
   obtenerUsuarioViaToken(obtenerUsuario: ObtenerUsuario) {
     return lastValueFrom(
-      this.httpClient.post<TokenResponse>("http://localhost:8082/autenticacion/obtener-usuario-token/", obtenerUsuario)
+      this.httpClient.post<TokenResponse>(environment.urlBack+"/autenticacion/obtener-usuario-token/", obtenerUsuario)
     );
   }
 
