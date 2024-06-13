@@ -15,5 +15,7 @@ export class ElegircomidasComponent {
   ];
   total = 0;
   selected: string[] = [];
+  product: string | undefined;
 }
+
 

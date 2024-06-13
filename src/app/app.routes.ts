@@ -9,6 +9,7 @@ import {FormsComponent} from "./forms/forms.component";
 import {ContactComponent} from "./contact/contact.component";
 import {BotonesComponent} from "./botones/botones.component";
 import {PasoRutinaComponent} from "./paso-rutina/paso-rutina.component";
+import {ElegircomidasComponent} from "./elegircomidas/elegircomidas.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,6 +21,7 @@ export const routes: Routes = [
   {path: 'paso1', component: FormsComponent},
   {path: 'contacto', component: ContactComponent},
   {path: 'principal', component: BotonesComponent},
-  {path: 'mirutina', component: PasoRutinaComponent}
+  {path: 'mirutina', component: PasoRutinaComponent},
+  {path: 'elegircomidas', component: ElegircomidasComponent}
 
 ];

@@ -1,9 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Manage Carts</title>
+</head>
+<body>
 <section class="h-screen bg-gray-100 px-4 text-gray-600 antialiased">
   <div class="flex h-full flex-col justify-center">
     <!-- Table -->
-    <div class="mx-auto w-full max-w-2xl rounded-sm border border-gray-200 bg-white shadow-lg">
+    <div class="mx-auto w-full max-w-4xl rounded-sm border border-gray-200 bg-white shadow-lg">
       <header class="border-b border-gray-100 px-5 py-4">
-        <div class="font-semibold text-gray-800">Manage Carts</div>
+        <div class="font-semibold text-gray-800">Agregar comidas</div>
       </header>
 
       <div class="overflow-x-auto p-3">
@@ -12,59 +21,257 @@
           <tr>
             <th></th>
             <th class="p-2">
-              <div class="text-left font-semibold">Product Name</div>
+              <div class="text-left font-semibold">Comidas</div>
             </th>
             <th class="p-2">
-              <div class="text-left font-semibold">Quantity</div>
+              <div class="text-left font-semibold">Raciones</div>
             </th>
             <th class="p-2">
-              <div class="text-left font-semibold">Total</div>
+              <div class="text-left font-semibold">Calorías</div>
             </th>
             <th class="p-2">
-              <div class="text-center font-semibold">Action</div>
+              <div class="text-left font-semibold">Fecha</div>
+            </th>
+            <th class="p-2">
+              <div class="text-center font-semibold">Acción</div>
             </th>
           </tr>
           </thead>
 
           <tbody class="divide-y divide-gray-100 text-sm">
-          <!-- record 1 -->
+          <!-- Product 1 -->
           <tr>
             <td class="p-2">
-              <input type="checkbox" class="h-5 w-5" />
+              <input type="checkbox" class="h-5 w-5" value="id-1" />
             </td>
             <td class="p-2">
-              <div class="font-medium text-gray-800"></div>
+              <div class="font-medium text-gray-800">Ensalada César</div>
             </td>
             <td class="p-2">
-              <div class="
-text-left">{{ product.quantity }}</div>
+              <input type="number" class="p-2 w-full" placeholder="1" />
             </td>
             <td class="p-2">
-              <div class="text-left font-medium text-green-500"></div>
+              <div class="text-left font-medium text-green-500">145 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Product 2 -->
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-2" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Batido de Proteínas</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">205 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+              </div>
+          </tr>
+
+          <!-- Product 3 -->
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-3" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Quinoa con Verduras</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">100</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+
+              </div>
+            </td>
+          </tr>
+
+          <!-- Product 4 -->
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-3" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Batido de fresa</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">180 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+
+              </div>
+            </td>
+          </tr>
+
+
+          <!-- Product 5 -->
+
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-3" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Ensalada blanca con pollo</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">180 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+
+              </div>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-3" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Jugo de frutas verdes</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">180 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-3" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Postre de avena</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">180 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="p-2">
+              <input type="checkbox" class="h-5 w-5" value="id-3" />
+            </td>
+            <td class="p-2">
+              <div class="font-medium text-gray-800">Tacos de lechuga con pollo</div>
+            </td>
+            <td class="p-2">
+              <input type="number" class="p-2 w-full" placeholder="1" />
+            </td>
+            <td class="p-2">
+              <div class="text-left font-medium text-green-500">250 kl</div>
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <div class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Guardar</button>
+
+              </div>
+            </td>
+          </tr>
+          <!-- Add product row -->
+          <tr>
+            <td class="p-2"></td>
+            <td class="p-2">
+              <input type="text" class="border p-2 w-full" placeholder="Nombre de la comida" />
+            </td>
+            <td class="p-2">
+              <input type="number" class="border p-2 w-full" placeholder="Cantidad" />
+            </td>
+            <td class="p-2">
+              <input type="number" class="border p-2 w-full" placeholder="Calorías" />
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
+            </td>
+            <td class="p-2">
+              <input type="date" class="border p-2 w-full" />
             </td>
             <td class="p-2">
               <div class="flex justify-center">
-                <button >
-                  <svg class="h-8 w-8 rounded-full p-1 hover:bg-gray-100 hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                  </svg>
-                </button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded">Agregar</button>
               </div>
             </td>
           </tr>
           </tbody>
         </table>
       </div>
-      <!-- total amount -->
-      <div class="flex justify-end space-x-4 border-t border-gray-100 px-5 py-4 text-2xl font-bold">
-        <div>Total</div>
-        <div class="text-blue-600"></div>
-      </div>
 
-      <div class="flex justify-end">
-        <!-- send this data to backend (note: use class 'hidden' to hide this input) -->
-        <input type="hidden" class="border border-black bg-gray-50" [value]="selected.join(', ')" />
+      <!-- Total calorías -->
+      <div class="flex justify-end space-x-4 border-t border-gray-100 px-5 py-4 text-2xl font-bold">
+        <div>Calorías totales: </div>
+        <div class="text-blue-600">0.00</div>
       </div>
     </div>
   </div>
 </section>
+</body>
+</html>
