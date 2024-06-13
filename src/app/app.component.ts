@@ -8,13 +8,15 @@ import {CommonModule} from "@angular/common";
 import {LoginComponent} from "./auth/login/login.component";
 import {SignupComponent} from "./auth/signup/signup.component";
 import {FormsComponent} from "./forms/forms.component";
-import { ContactComponent } from './contact/contact.component';
+import {ContactComponent } from './contact/contact.component';
+import {BotonesComponent} from "./botones/botones.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, FooterComponent, HomeComponent,
-    EjerciciosComponent, CommonModule, LoginComponent, SignupComponent, FormsComponent, ContactComponent],
+    EjerciciosComponent, CommonModule, LoginComponent, SignupComponent,
+    FormsComponent, ContactComponent, BotonesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
