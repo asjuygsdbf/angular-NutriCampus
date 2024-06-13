@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {HomeComponent} from "./home/home.component";
@@ -9,6 +9,7 @@ import {LoginComponent} from "./auth/login/login.component";
 import {SignupComponent} from "./auth/signup/signup.component";
 import {FormsComponent} from "./forms/forms.component";
 import { ContactComponent } from './contact/contact.component';
+import {MostrarService} from "../api/mostrar/mostrar.service";
 
 @Component({
   selector: 'app-root',
@@ -18,19 +19,16 @@ import { ContactComponent } from './contact/contact.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent implements OnInit{
   title = 'Nutricampus'
-  mostrar = true
+  mostrar_previo = true
+  mostrar?: boolean
 
-  mostrarHeaderAndFooter(){
-    console.log(document.URL)
-    if(document.URL == 'http://localhost:4200/login' || document.URL == 'http://localhost:4200/registro' ){
-      this.mostrar = false
-    }
-  }
+  mostrarService = inject(MostrarService)
 
   ngOnInit(): void {
-    this.mostrarHeaderAndFooter()
+    this.mostrar = this.mostrarService.mostrarHeaderAndFooter(this.mostrar_previo)
   }
 
 }

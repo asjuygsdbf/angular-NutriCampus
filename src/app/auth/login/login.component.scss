@@ -6,3 +6,11 @@
 .bg-custom-color-dark {
   background-color: #d09f90;
 }
+
+.ng-valid:not(form).ng-touched {
+  border-left: 5px solid #42a948;
+}
+
+.ng-invalid:not(form).ng-touched {
+  border-left: 5px solid #a94442;
+}
