@@ -1,21 +1,37 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
+import {Comida} from "../../api/comida-api/interfaces";
+import {ComidaApiService} from "../../api/comida-api/comida-api.service";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-elegircomidas',
   standalone: true,
-  imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './elegircomidas.component.html',
   styleUrl: './elegircomidas.component.scss'
 })
-export class ElegircomidasComponent {
+export class ElegircomidasComponent implements OnInit{
 
-  products = [
-    { id: 'id-1', name: 'Samsung Galaxy Note 4', quantity: 1, price: 2890.66 },
-    { id: 'id-2', name: 'Logitech Keyboard', quantity: 1, price: 120.50 }
-  ];
-  total = 0;
-  selected: string[] = [];
-  product: string | undefined;
+  // Variable donde se almacenara todas las comidas registradas
+  comidas: Comida[] = []
+
+  // Inyeccion del servicio Comida
+  comidaApiService = inject(ComidaApiService)
+
+  // Contador del total de calorias
+  calorias = 0
+
+  async ngOnInit(){
+    await this.loadData()
+  }
+
+  private async loadData(){
+    this.comidas = await this.comidaApiService.listarComidas()
+  }
+
+  cargarCalorias(comida: Comida){
+    this.calorias += comida.ingrediente.caloriasUnidad
+  }
 }
-
-

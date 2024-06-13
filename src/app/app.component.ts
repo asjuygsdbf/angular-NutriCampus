@@ -27,7 +27,6 @@ export class AppComponent implements OnInit{
   mostrar = true
 
   mostrarHeaderAndFooter(){
-    console.log(document.URL)
     if(document.URL == 'http://localhost:4200/login' || document.URL == 'http://localhost:4200/registro' ){
       this.mostrar = false
     }

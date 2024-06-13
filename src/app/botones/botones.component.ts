@@ -1,11 +1,14 @@
 import {Component, OnInit, inject} from '@angular/core';
 import {BuscarUsuario, ObtenerUsuario, TokenResponse, Usuario} from "../../api/user-api/interfaces";
 import {UserApiService} from "../../api/user-api/user-api.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-botones',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './botones.component.html',
   styleUrl: './botones.component.scss'
 })
