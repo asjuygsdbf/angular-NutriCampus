@@ -66,7 +66,7 @@ export class LoginComponent{
         complete: () => {
           console.info("Login completo")
           this.mostrarService.mostrarHeaderAndFooter(true)
-          this.router.navigateByUrl('/').then(() => {
+          this.router.navigateByUrl('/principal').then(() => {
             window.location.reload();
           });
           this.loginForm.reset();

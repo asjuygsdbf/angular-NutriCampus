@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {BehaviorSubject, catchError, lastValueFrom, map, Observable, of, tap, throwError} from "rxjs";
-import {AutenticacionUsuario, CrearUsuario, ObtenerUsuario, TokenResponse, Usuario} from "./interfaces";
+import {AutenticacionUsuario, BuscarUsuario, CrearUsuario, ObtenerUsuario, TokenResponse, Usuario} from "./interfaces";
 import {environment} from "../../env/env.prod"
 
 @Injectable({
@@ -59,6 +59,10 @@ export class UserApiService {
     return lastValueFrom(
       this.httpClient.post<TokenResponse>(environment.urlBack+"/autenticacion/obtener-usuario-token/", obtenerUsuario)
     );
+  }
+
+  buscarPorUsuario(usuario: BuscarUsuario){
+    return lastValueFrom(this.httpClient.post<Usuario>(environment.urlBack+"/usuario/buscar-por-usuario/", usuario));
   }
 
   get userData():Observable<String>{

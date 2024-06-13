@@ -36,3 +36,7 @@ export interface ObtenerUsuario{
 export interface TokenResponse{
   nombreUsuario: string
 }
+
+export interface BuscarUsuario{
+  nombreUsuario: string
+}

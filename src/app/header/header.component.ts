@@ -41,19 +41,18 @@ export class HeaderComponent implements OnInit{
         this.userLoginOn = userLoginOn;
       }
     });
-    console.log("El userLoginOn es " + this.userLoginOn);
     if (this.userLoginOn) {
       this.obtenerUsuario.token = this.userApiService.userToken;
-      console.log(this.obtenerUsuario);
       this.user = await this.userApiService.obtenerUsuarioViaToken(this.obtenerUsuario);
-      console.log('Usuario obtenido:', this.user);
     }
   }
 
   cerrarSesion(){
     if(this.user.nombreUsuario != ''){
       this.userApiService.cerrarSesion();
-      window.location.reload();
+      this.router.navigateByUrl('/').then(() => {
+        window.location.reload();
+      });
     }else{
       this.router.navigateByUrl('/login')
     }
