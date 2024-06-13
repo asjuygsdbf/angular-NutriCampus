@@ -10,13 +10,14 @@ import {SignupComponent} from "./auth/signup/signup.component";
 import {FormsComponent} from "./forms/forms.component";
 import {ContactComponent } from './contact/contact.component';
 import {BotonesComponent} from "./botones/botones.component";
+import {PasoRutinaComponent} from "./paso-rutina/paso-rutina.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, FooterComponent, HomeComponent,
     EjerciciosComponent, CommonModule, LoginComponent, SignupComponent,
-    FormsComponent, ContactComponent, BotonesComponent],
+    FormsComponent, ContactComponent, BotonesComponent, PasoRutinaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -8,6 +8,7 @@ import {SignupComponent} from "./auth/signup/signup.component";
 import {FormsComponent} from "./forms/forms.component";
 import {ContactComponent} from "./contact/contact.component";
 import {BotonesComponent} from "./botones/botones.component";
+import {PasoRutinaComponent} from "./paso-rutina/paso-rutina.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,6 +19,7 @@ export const routes: Routes = [
   {path: 'registro', component: SignupComponent},
   {path: 'paso1', component: FormsComponent},
   {path: 'contacto', component: ContactComponent},
-  {path: 'principal', component: BotonesComponent}
+  {path: 'principal', component: BotonesComponent},
+  {path: 'mirutina', component: PasoRutinaComponent}
 
 ];
