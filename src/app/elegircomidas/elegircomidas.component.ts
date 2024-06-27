@@ -30,8 +30,4 @@ export class ElegircomidasComponent implements OnInit{
   private async loadData(){
     this.comidas = await this.comidaApiService.listarComidas()
   }
-
-  cargarCalorias(comida: Comida){
-    this.calorias += comida.ingrediente.caloriasUnidad
-  }
 }

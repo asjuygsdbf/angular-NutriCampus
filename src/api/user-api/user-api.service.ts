@@ -2,7 +2,7 @@ import {inject, Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {BehaviorSubject, catchError, lastValueFrom, map, Observable, of, tap, throwError} from "rxjs";
 import {AutenticacionUsuario, BuscarUsuario, CrearUsuario, ObtenerUsuario, TokenResponse, Usuario} from "./interfaces";
-import {environment} from "../../env/env.prod"
+import {environment} from "../../environments/environment.development";
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,7 @@ export class UserApiService {
   }
 
   listarUsuarios(){
-    return lastValueFrom(this.httpClient.get<Usuario[]>(environment.urlBack+'/usuario/listar/'))
+    return lastValueFrom(this.httpClient.get<Usuario[]>(environment+'/usuario/listar/'))
   }
 
   registrarUsuario(usuario: CrearUsuario):Observable<any>{
