@@ -11,8 +11,7 @@
           <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Escribe un nombre y un apellido</label>
           <div class="mt-2">
             <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-
-              <input formControlName = "name" type="text" name="username" id="username" autocomplete="username" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Emanuel Perez">
+              <input formControlName = "name" type="text" name="username" id="username" autocomplete="username" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Emanuel Perez" [(ngModel)]="usuario.nombreCompleto">
             </div>
           </div>
         </div>
@@ -54,30 +53,30 @@
 
       <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
         <div class="sm:col-span-3">
-          <label formControlName = "peso" for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Indica tu peso en kg</label>
+          <label  for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Indica tu peso en kg</label>
           <div class="mt-2">
-            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input formControlName = "peso" type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.peso">
           </div>
         </div>
 
         <div class="sm:col-span-3">
           <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Indica tu talla en cm</label>
           <div class="mt-2">
-            <input formControlName = "talla" type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input formControlName = "talla" type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.talla">
           </div>
         </div>
 
         <div class="sm:col-span-4">
           <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Género</label>
           <div class="mt-2">
-            <input formControlName = "genero" id="email" name="email" type="text" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input formControlName = "genero" id="email" name="email" type="text" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.genero">
           </div>
         </div>
 
         <div class="sm:col-span-3">
           <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Nivel de actividad</label>
           <div class="mt-2">
-            <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+            <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" [(ngModel)]="usuario.nivelActividad">
               <option>Actividad mínima</option>
               <option>Moderadamente activo</option>
               <option>Extremadamente activo</option>
@@ -89,7 +88,7 @@
           <label for="health-history" class="block text-sm font-medium leading-6 text-gray-900">Historial de salud</label>
           <p class="mt-1 text-sm leading-6 text-gray-600">Describe si tienes condiciones médicas, enfermedades o alergias.</p>
           <div class="mt-2">
-            <textarea formControlName = "historiaSalud" id="health-history" name="health-history" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+            <textarea formControlName = "historiaSalud" id="health-history" name="health-history" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.historialSalud"></textarea>
           </div>
         </div>
 
@@ -98,19 +97,19 @@
             <legend class="text-sm font-semibold leading-6 text-gray-900">Objetivos dietéticos</legend>
             <div class="mt-6 space-y-6">
               <div class="flex items-center gap-x-3">
-                <input id="Perder-peso" name="Perder-peso" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="Perder-peso" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="Perder peso" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                 <label for="Perder-peso" class="block text-sm font-medium leading-6 text-gray-900">Perder peso</label>
               </div>
               <div class="flex items-center gap-x-3">
-                <input id="Ganar-peso" name="Ganar-peso" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="Ganar-peso" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="Ganar peso" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                 <label for="ganar-peso" class="block text-sm font-medium leading-6 text-gray-900">Ganar peso</label>
               </div>
               <div class="flex items-center gap-x-3">
-                <input id="Mantener-mi-peso-actual" name="Mantener-mi-peso-actual" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="Mantener-mi-peso-actual" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="Mantener mi peso actual" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                 <label for="Mantener-mi-peso-actual" class="block text-sm font-medium leading-6 text-gray-900">Mantener mi peso actual</label>
               </div>
               <div class="flex items-center gap-x-3">
-                <input id="Mejorar-mi-salud" name="Mejorar-mi-salud" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="Mejorar-mi-salud" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="Mejorar mi salud en general" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                 <label for="Mejorar-mi-salud" class="block text-sm font-medium leading-6 text-gray-900">Mejorar mi salud en general</label>
               </div>
             </div>
@@ -120,10 +119,8 @@
         <div class="sm:col-span-3">
           <label for="preferencias" class="block text-sm font-medium leading-6 text-gray-900">Preferencias dietéticas</label>
           <div class="mt-2">
-            <select id="preferencias" name="preferencias" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-              <option>Ninguna</option>
-              <option>Vegetariana</option>
-              <option>Vegana</option>
+            <select id="preferencias" name="preferencias" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" [(ngModel)]="usuario.preferenciasDieteticas">
+              <option value="preferenciaa" *ngFor = "let preferenciaa of preferencias">{{preferenciaa}}</option>
             </select>
           </div>
         </div>
@@ -132,7 +129,7 @@
           <label for="Alimentos" class="block text-sm font-medium leading-6 text-gray-900">Alimentos</label>
           <p class="mt-1 text-sm leading-6 text-gray-600">Escribe cuales son tus alimentos favoritos</p>
           <div class="mt-2">
-            <input id="Alimentos" name="Alimentos" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input id="Alimentos" formControlName = "alimentos" name="Alimentos" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.alimentos">
           </div>
         </div>
 
