@@ -55,22 +55,33 @@
         <div class="sm:col-span-3">
           <label  for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Indica tu peso en kg</label>
           <div class="mt-2">
-            <input formControlName = "peso" type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.peso">
+            <input formControlName = "peso" type="number" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.peso">
           </div>
         </div>
 
         <div class="sm:col-span-3">
           <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Indica tu talla en cm</label>
           <div class="mt-2">
-            <input formControlName = "talla" type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.talla">
+            <input formControlName = "talla" type="number" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.talla">
           </div>
         </div>
 
-        <div class="sm:col-span-4">
-          <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Género</label>
+        <div class="sm:col-span-3">
+          <label for="genero" class="block text-sm font-medium leading-6 text-gray-900">Género</label>
           <div class="mt-2">
-            <input formControlName = "genero" id="email" name="email" type="text" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.genero">
+            <select id="genero" name="country" autocomplete="country-name" class="block w-44 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" [(ngModel)]="usuario.genero" [ngModelOptions]="{standalone: true}">
+              <option value = "Masculino">Masculino</option>
+              <option value = "Femenino">Femenino</option>
+              <option value = "Prefiero no especificar">Prefiero no especificar</option>
+            </select>
           </div>
+        </div>
+
+        <div class="sm:col-span-3">
+            <label for="edad" class="block text-sm font-medium leading-6 text-gray-900">Edad</label>
+            <div class="mt-2">
+              <input formControlName = "edad" type="number" name="edad" id="edad" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="usuario.edad">
+            </div>
         </div>
 
         <div class="sm:col-span-3">

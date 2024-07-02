@@ -46,9 +46,9 @@ export class FormsComponent implements OnInit {
   registerForm = this.formBuilder.group({
     name: ['', Validators.required],
     imagen: ['', Validators.required],
-    peso: ['', Validators.required],
-    talla: ['', Validators.required],
-    genero: ['', Validators.required],
+    peso: [Validators.required],
+    talla: [Validators.required],
+    edad: [Validators.required],
     historiaSalud: ['', Validators.required],
     alimentos: ['', Validators.required]
   })
