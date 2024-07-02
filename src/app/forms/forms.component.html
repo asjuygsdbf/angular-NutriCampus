@@ -76,10 +76,10 @@
         <div class="sm:col-span-3">
           <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Nivel de actividad</label>
           <div class="mt-2">
-            <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" [(ngModel)]="usuario.nivelActividad">
-              <option>Actividad mínima</option>
-              <option>Moderadamente activo</option>
-              <option>Extremadamente activo</option>
+            <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" [(ngModel)]="usuario.nivelActividad" [ngModelOptions]="{standalone: true}">
+              <option value = "Actividad mínima">Actividad mínima</option>
+              <option value = "Moderadamente activo">Moderadamente activo</option>
+              <option value = "Extremadamente activo">Extremadamente activo</option>
             </select>
           </div>
         </div>
@@ -119,8 +119,12 @@
         <div class="sm:col-span-3">
           <label for="preferencias" class="block text-sm font-medium leading-6 text-gray-900">Preferencias dietéticas</label>
           <div class="mt-2">
-            <select id="preferencias" name="preferencias" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" [(ngModel)]="usuario.preferenciasDieteticas">
-              <option value="preferenciaa" *ngFor = "let preferenciaa of preferencias">{{preferenciaa}}</option>
+            <select id="preferencias" name="preferencias" autocomplete="country-name"
+                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                    [(ngModel)] = "usuario.preferenciasDieteticas" [ngModelOptions]="{standalone: true}">
+              <option value="Ninguna">Ninguna</option>
+              <option value="Vegetariana">Vegetariana</option>
+              <option value="Vegana">Vegana</option>
             </select>
           </div>
         </div>

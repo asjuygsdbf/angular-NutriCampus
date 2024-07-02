@@ -38,8 +38,6 @@ export class FormsComponent implements OnInit {
     alimentos: '',
   }
 
-  preferencias: string[] = ["Ninguna", "Vegetariana", "Vegana"];
-
   router = inject(Router)
   formBuilder = inject(FormBuilder)
   userDataService = inject(UserDataService)
