@@ -70,9 +70,9 @@
           <label for="genero" class="block text-sm font-medium leading-6 text-gray-900">Género</label>
           <div class="mt-2">
             <select id="genero" name="country" autocomplete="country-name" class="block w-44 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" [(ngModel)]="usuario.genero" [ngModelOptions]="{standalone: true}">
-              <option value = "Masculino">Masculino</option>
-              <option value = "Femenino">Femenino</option>
-              <option value = "Prefiero no especificar">Prefiero no especificar</option>
+              <option value = "M">Masculino</option>
+              <option value = "F">Femenino</option>
+              <option value = "N">Prefiero no especificar</option>
             </select>
           </div>
         </div>
@@ -88,9 +88,9 @@
           <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Nivel de actividad</label>
           <div class="mt-2">
             <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" [(ngModel)]="usuario.nivelActividad" [ngModelOptions]="{standalone: true}">
-              <option value = "Actividad mínima">Actividad mínima</option>
-              <option value = "Moderadamente activo">Moderadamente activo</option>
-              <option value = "Extremadamente activo">Extremadamente activo</option>
+              <option value = "1">Actividad mínima</option>
+              <option value = "2">Moderadamente activo</option>
+              <option value = "3">Extremadamente activo</option>
             </select>
           </div>
         </div>
@@ -108,19 +108,19 @@
             <legend class="text-sm font-semibold leading-6 text-gray-900">Objetivos dietéticos</legend>
             <div class="mt-6 space-y-6">
               <div class="flex items-center gap-x-3">
-                <input id="Perder-peso" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="Perder peso" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="Perder-peso" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="1" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                 <label for="Perder-peso" class="block text-sm font-medium leading-6 text-gray-900">Perder peso</label>
               </div>
               <div class="flex items-center gap-x-3">
-                <input id="Ganar-peso" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="Ganar peso" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="Ganar-peso" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="2" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                 <label for="ganar-peso" class="block text-sm font-medium leading-6 text-gray-900">Ganar peso</label>
               </div>
               <div class="flex items-center gap-x-3">
-                <input id="Mantener-mi-peso-actual" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="Mantener mi peso actual" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="Mantener-mi-peso-actual" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="3" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                 <label for="Mantener-mi-peso-actual" class="block text-sm font-medium leading-6 text-gray-900">Mantener mi peso actual</label>
               </div>
               <div class="flex items-center gap-x-3">
-                <input id="Mejorar-mi-salud" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="Mejorar mi salud en general" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <input id="Mejorar-mi-salud" radioValue (radioValueChange)="setObjetivoDietetico($event)" value="4" name = "meta" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                 <label for="Mejorar-mi-salud" class="block text-sm font-medium leading-6 text-gray-900">Mejorar mi salud en general</label>
               </div>
             </div>
@@ -133,9 +133,9 @@
             <select id="preferencias" name="preferencias" autocomplete="country-name"
                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                     [(ngModel)] = "usuario.preferenciasDieteticas" [ngModelOptions]="{standalone: true}">
-              <option value="Ninguna">Ninguna</option>
-              <option value="Vegetariana">Vegetariana</option>
-              <option value="Vegana">Vegana</option>
+              <option value="1">Ninguna</option>
+              <option value="2">Vegetariana</option>
+              <option value="3">Vegana</option>
             </select>
           </div>
         </div>

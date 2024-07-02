@@ -71,15 +71,10 @@ export interface AutenticacionUsuario{
   contra: string
 }
 
-export interface ObtenerUsuario{
-  token: string,
-  relleno: string
-}
-
 export interface TokenResponse{
   nombreUsuario: string
 }
 
-export interface BuscarUsuario{
-  nombreUsuario: string
+export interface ObtenerUsuarioToken{
+  token: string
 }

@@ -14,6 +14,7 @@ import {PasoRutinaComponent} from "./paso-rutina/paso-rutina.component";
 import {ElegircomidasComponent} from "./elegircomidas/elegircomidas.component";
 import {CalendarioComponent} from "./calendario/calendario.component";
 import {DenegadoComponent} from "./denegado/denegado.component";
+import {environment} from "../environments/environment.development";
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit{
   mostrar = true
 
   mostrarHeaderAndFooter(){
-    if(document.URL == 'http://localhost:4200/login' || document.URL == 'http://localhost:4200/registro' ){
+    if(document.URL == environment.urlFront+'/login' || document.URL == environment.urlFront+'/registro' ){
       this.mostrar = false
     }
   }

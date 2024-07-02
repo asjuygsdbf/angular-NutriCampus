@@ -1,7 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {Router, RouterLink, RouterOutlet} from "@angular/router";
 import {UserApiService} from "../../api/user-api/user-api.service";
-import {ObtenerUsuario, TokenResponse} from "../../api/user-api/interfaces";
+import {ObtenerUsuarioToken, TokenResponse} from "../../api/user-api/interfaces";
 import {NgIf} from "@angular/common";
 
 @Component({
@@ -17,13 +17,12 @@ import {NgIf} from "@angular/common";
 })
 export class HeaderComponent implements OnInit{
 
-  obtenerUsuario: ObtenerUsuario = {
-    token: "",
-    relleno: ""
-  }
-
   user: TokenResponse = {
     nombreUsuario: ''
+  }
+
+  request: ObtenerUsuarioToken = {
+    token: ""
   }
 
   // Para sacar los datos del usuario logeado
@@ -42,8 +41,8 @@ export class HeaderComponent implements OnInit{
       }
     });
     if (this.userLoginOn) {
-      this.obtenerUsuario.token = this.userApiService.userToken;
-      this.user = await this.userApiService.obtenerUsuarioViaToken(this.obtenerUsuario);
+      this.request.token = this.userApiService.userToken;
+      this.user = await this.userApiService.obtenerUsuarioViaToken(this.request);
     }
   }
 
