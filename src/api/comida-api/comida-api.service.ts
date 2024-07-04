@@ -14,4 +14,8 @@ export class ComidaApiService {
   listarComidas(){
     return lastValueFrom(this.httpClient.get<Comida[]>(environment.urlMicroservicioDieta+'/comida/listar/'));
   }
+
+  buscarComida(comida: string){
+    return lastValueFrom(this.httpClient.get<Comida>(environment.urlMicroservicioDieta+'/comida/buscar/'+comida));
+  }
 }

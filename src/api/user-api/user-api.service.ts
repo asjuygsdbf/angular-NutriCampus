@@ -1,8 +1,15 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {BehaviorSubject, catchError, lastValueFrom, map, Observable, of, tap, throwError} from "rxjs";
-import {AutenticacionUsuario, CrearUsuario, ObtenerUsuarioToken, TokenResponse, Usuario} from "./interfaces";
+import {
+  AutenticacionUsuario,
+  CrearUsuario,
+  ObtenerUsuarioToken,
+  TokenResponse,
+  Usuario
+} from "./interfaces";
 import {environment} from "../../environments/environment.development";
+import {Cronograma} from "../cronograma-api/interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -29,16 +36,16 @@ export class UserApiService {
   }
 
   listarUsuarios(){
-    return lastValueFrom(this.httpClient.get<Usuario[]>(environment.urlMicroservicioUsuario+'/usuario/listar/'))
+    return lastValueFrom(this.httpClient.get<Usuario[]>(environment.urlBack+'/usuario/listar/'))
   }
 
   registrarUsuario(usuario: CrearUsuario):Observable<any>{
-    return this.httpClient.post<Usuario>(environment.urlMicroservicioUsuario+'/autenticacion/registrar/', usuario).pipe(
+    return this.httpClient.post<Usuario>(environment.urlBack+'/autenticacion/registrar/', usuario).pipe(
       catchError(this.handleError))
   }
 
   iniciarSesion(usuario: AutenticacionUsuario):Observable<any>{
-    return this.httpClient.post<any>(environment.urlMicroservicioUsuario + '/autenticacion/iniciar-sesion/', usuario).pipe(
+    return this.httpClient.post<any>(environment.urlBack + '/autenticacion/iniciar-sesion/', usuario).pipe(
       tap((userData) => {
         console.log("User Data : "+userData);
         sessionStorage.setItem("token", userData.token);
@@ -57,12 +64,16 @@ export class UserApiService {
 
   obtenerUsuarioViaToken(token: ObtenerUsuarioToken) {
     return lastValueFrom(
-      this.httpClient.post<TokenResponse>(environment.urlMicroservicioUsuario+"/autenticacion/obtener-usuario-token/", token)
+      this.httpClient.post<TokenResponse>(environment.urlBack+"/autenticacion/obtener-usuario-token/", token)
     );
   }
 
   buscarPorUsuario(usuario: string){
-    return lastValueFrom(this.httpClient.get<Usuario>(environment.urlMicroservicioUsuario+"/usuario/buscar-por-usuario/" + usuario));
+    return lastValueFrom(this.httpClient.get<Usuario>(environment.urlBack+"/usuario/buscar-por-usuario/" + usuario));
+  }
+
+  listarCronogramasPorUsuario(usuario: string){
+    return lastValueFrom(this.httpClient.get<Cronograma[]>(environment.urlBack+"/cronograma/listar-por-usuario/"+usuario));
   }
 
   get userData():Observable<String>{
