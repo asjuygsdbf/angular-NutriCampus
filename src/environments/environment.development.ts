@@ -4,7 +4,7 @@ export const environment = {
   urlBack:'https://nutricampus-back.onrender.com',
   urlMicroservicioDieta: 'https://nutricampus-microservicio-v2.onrender.com',
   //urlMicroservicioDieta: 'http://localhost:8081',
-  urlFront: 'https://develop--nutricampus.netlify.app',
+  urlFront: 'https://angular-nutri-campus.vercel.app/registro',
   //urlFront: 'http://localhost:4200',
   urlMicroservicioRutina: 'https://nutricampus-microservicio-rutina.onrender.com'
   //urlMicroservicioRutina: 'http://localhost:8083'
