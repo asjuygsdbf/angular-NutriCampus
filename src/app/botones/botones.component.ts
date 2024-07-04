@@ -1,7 +1,7 @@
 import {Component, OnInit, inject} from '@angular/core';
 import {ObtenerUsuarioToken, TokenResponse, Usuario} from "../../api/user-api/interfaces";
 import {UserApiService} from "../../api/user-api/user-api.service";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-botones',
@@ -26,6 +26,7 @@ export class BotonesComponent implements OnInit{
 
   // Para sacar los datos del usuario logeado
   userApiService = inject(UserApiService)
+  router = inject(Router)
 
   async ngOnInit(){
     await this.loadData()
@@ -39,5 +40,9 @@ export class BotonesComponent implements OnInit{
 
   private async obtenerNombreCompleto(){
     this.usuario = await this.userApiService.buscarPorUsuario(this.user.nombreUsuario);
+  }
+
+  calendario() {
+    this.router.navigateByUrl('/calendario')
   }
 }

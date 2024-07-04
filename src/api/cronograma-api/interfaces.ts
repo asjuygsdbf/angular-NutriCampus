@@ -23,3 +23,12 @@ export interface CrearCronograma{
   nombreUsuario: string
   colorFondo: string
 }
+
+export interface EditarCronograma{
+  fechaInicio: string
+  fechaFin: string
+  nombreEvento: string
+  nombre: string
+  url: string
+  colorFondo: string
+}

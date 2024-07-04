@@ -1,14 +1,20 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {FullCalendarModule} from "@fullcalendar/angular";
-import {CalendarOptions, EventSourceInput} from "@fullcalendar/core";
+import {CalendarOptions, EventDropArg, EventSourceInput} from "@fullcalendar/core";
 import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
+import interactionPlugin, {EventReceiveArg} from '@fullcalendar/interaction';
 import listWeek from '@fullcalendar/list';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import {UserApiService} from "../../api/user-api/user-api.service";
 import {Router} from "@angular/router";
-import {Cronograma} from "../../api/cronograma-api/interfaces";
+import {Cronograma, EditarCronograma} from "../../api/cronograma-api/interfaces";
 import {ObtenerUsuarioToken, TokenResponse} from "../../api/user-api/interfaces";
+import {CronogramaApiService} from "../../api/cronograma-api/cronograma-api.service";
+import Tooltip from "tooltip.js";
+import {EjercicioApiService} from "../../api/ejercicio-api/ejercicio-api.service";
+import {ComidaApiService} from "../../api/comida-api/comida-api.service";
+import {Ejercicio} from "../../api/ejercicio-api/interfaces";
+import {Comida} from "../../api/comida-api/interfaces";
 
 @Component({
   selector: 'app-calendario',
@@ -22,7 +28,13 @@ export class CalendarioComponent implements OnInit{
   events: Cronograma[] = []
 
   userApiService = inject(UserApiService);
+  ejercicioApiService = inject(EjercicioApiService);
+  comidaApiService = inject(ComidaApiService);
   router = inject(Router);
+
+  ejercicio?: Ejercicio
+  comida?: Comida
+  description: string = ''
 
   user: TokenResponse = {
     nombreUsuario: ''
@@ -31,6 +43,17 @@ export class CalendarioComponent implements OnInit{
   request: ObtenerUsuarioToken = {
     token: ""
   }
+
+  editarEvento: EditarCronograma = {
+    fechaInicio: '',
+    fechaFin: '',
+    nombreEvento: '',
+    nombre: '',
+    url: '',
+    colorFondo: ''
+  }
+
+  cronogramaApiService = inject(CronogramaApiService)
 
   //Identificador de si esta logeado el usuario
   userLoginOn : boolean = false;
@@ -69,7 +92,12 @@ export class CalendarioComponent implements OnInit{
     selectable: true,
     initialView: 'dayGridMonth',
     plugins: [timeGridPlugin, interactionPlugin, listWeek, dayGridPlugin],
-    events: []
+    events: [],
+    droppable: true,
+    editable: true,
+    eventReceive: this.handleEventChange.bind(this),
+    eventDrop: this.handleEventChange.bind(this),
+    eventDidMount: this.handleEventDidMount.bind(this)
   };
 
   async ngOnInit() {
@@ -97,4 +125,34 @@ export class CalendarioComponent implements OnInit{
   agregarEjercicio(){
     this.router.navigateByUrl('/elegirejercicios')
   }
+
+  async handleEventChange(info: EventReceiveArg | EventDropArg) {
+    this.editarEvento.fechaInicio = info.event.startStr
+    this.editarEvento.fechaFin = info.event.endStr
+    this.editarEvento.nombreEvento = info.event.title
+    this.editarEvento.nombre = info.event.extendedProps['name']
+    this.editarEvento.url = info.event.url
+    this.editarEvento.colorFondo = info.event.backgroundColor
+
+    await this.cronogramaApiService.editarCronograma(this.editarEvento, Number(info.event.id));
+  }
+
+  async handleEventDidMount(info: any) {
+    if(info.event.backgroundColor == '#F85205'){
+      this.ejercicio = await this.ejercicioApiService.buscarEjercicio(info.event.extendedProps.name);
+      this.description = this.ejercicio.descripcion;
+    }
+    if(info.event.backgroundColor == '#16C8F4'){
+      this.comida = await this.comidaApiService.buscarComida(info.event.extendedProps.name);
+      this.description = this.comida.descripcion;
+    }
+
+    const tooltip = new Tooltip(info.el, {
+      title: this.description,
+      placement: 'bottom-start',
+      trigger: 'hover',
+      container: 'body'
+    });
+  }
+
 }
