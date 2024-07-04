@@ -1,29 +1,29 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {Comida} from "../../api/comida-api/interfaces";
-import {ComidaApiService} from "../../api/comida-api/comida-api.service";
-import {FormsModule} from "@angular/forms";
 import {CrearCronograma} from "../../api/cronograma-api/interfaces";
 import {ObtenerUsuarioToken, TokenResponse} from "../../api/user-api/interfaces";
 import {UserApiService} from "../../api/user-api/user-api.service";
 import {CronogramaApiService} from "../../api/cronograma-api/cronograma-api.service";
 import {Router} from "@angular/router";
+import {Ejercicio} from "../../api/ejercicio-api/interfaces";
+import {EjercicioApiService} from "../../api/ejercicio-api/ejercicio-api.service";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  selector: 'app-elegircomidas',
+  selector: 'app-elegirejercicios',
   standalone: true,
   imports: [
     FormsModule
   ],
-  templateUrl: './elegircomidas.component.html',
-  styleUrl: './elegircomidas.component.scss'
+  templateUrl: './elegirejercicios.component.html',
+  styleUrl: './elegirejercicios.component.scss'
 })
-export class ElegircomidasComponent implements OnInit{
-
-  comida: Comida = {
+export class ElegirejerciciosComponent implements OnInit{
+  ejercicio: Ejercicio = {
     nombre: '',
-    tipo: '',
     descripcion: '',
-    calorias: 0
+    tiempoEjercicio: '',
+    caloriasQuemadas: 0,
+    velocidadEjercicio: ''
   }
 
   evento: CrearCronograma = {
@@ -34,10 +34,10 @@ export class ElegircomidasComponent implements OnInit{
     nombre: '',
     url: '',
     nombreUsuario: '',
-    colorFondo: '#16C8F4'
+    colorFondo: '#F85205'
   }
 
-  nombreComida: string = ''
+  nombreEjercicio: string = ''
 
   user: TokenResponse = {
     nombreUsuario: ''
@@ -54,7 +54,7 @@ export class ElegircomidasComponent implements OnInit{
   userLoginOn : boolean = false;
 
   // Inyeccion del servicio Comida
-  comidaApiService = inject(ComidaApiService)
+  ejercicioApiService = inject(EjercicioApiService)
   cronogramaApiService = inject(CronogramaApiService)
   router = inject(Router)
 
@@ -70,16 +70,16 @@ export class ElegircomidasComponent implements OnInit{
     }
   }
 
-  async buscarComida(){
-    if(this.nombreComida != ''){
-      this.comida = await this.comidaApiService.buscarComida(this.nombreComida)
+  async buscarEjercicio(){
+    if(this.nombreEjercicio != ''){
+      this.ejercicio = await this.ejercicioApiService.buscarEjercicio(this.nombreEjercicio)
     }else{
       alert("Input vacio")
     }
   }
 
-  agregarComida(){
-    this.evento.nombre = this.comida.nombre
+  agregarEjercicio(){
+    this.evento.nombre = this.ejercicio.nombre
     this.evento.nombreUsuario = this.user.nombreUsuario
     console.log(this.evento)
     this.cronogramaApiService.crearCronograma(this.evento)

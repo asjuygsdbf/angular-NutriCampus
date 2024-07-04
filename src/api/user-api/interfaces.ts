@@ -1,26 +1,36 @@
+import {Cronograma} from "../cronograma-api/interfaces";
+
 export interface Usuario{
-  nombreUsuario: string,
-  nombreCompleto: string,
+  nombreUsuario: string
+  nombreCompleto: string
+  foto: string
   edad: number
   peso: number
   talla: number
   genero: string
   nivelActividad: string
-  meta: number
-  velocidadEjercicio: string
+  historialSalud: string
+  meta: string
+  preferenciasDieteticas: string
+  alimentos: string
+  cronogramaSemanal: Cronograma[]
 }
 
 export interface CrearUsuario{
   nombreUsuario: string
+  nombreCompleto: string
   correo: string
   contra: string
+  foto: string
   edad: number
   peso: number
   talla: number
   genero: string
   nivelActividad: string
-  meta: number
-  velocidadEjercicio: string
+  historialSalud: string
+  meta: string
+  preferenciasDieteticas: string
+  alimentos: string
 }
 
 export interface AutenticacionUsuario{
@@ -28,15 +38,10 @@ export interface AutenticacionUsuario{
   contra: string
 }
 
-export interface ObtenerUsuario{
-  token: string,
-  relleno: string
-}
-
 export interface TokenResponse{
   nombreUsuario: string
 }
 
-export interface BuscarUsuario{
-  nombreUsuario: string
+export interface ObtenerUsuarioToken{
+  token: string
 }

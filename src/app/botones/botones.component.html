@@ -11,21 +11,11 @@
     <h1 class="text-4xl font-bold text-gray-800">Bienvenido {{usuario?.nombreCompleto}} a Nutricampus</h1>
     <p class="text-xl text-gray-600">Comienza tu viaje hacia una vida saludable, te brindamos las herramientas.</p>
   </div>
-  <div class="grid grid-cols-4 gap-6">
-
-    <div class="col-span-2 flex flex-col items-center">
-      <h1 class="px-6 py-3 shadow-lg shadow-gray-500/50 bg-black text-white rounded-lg text-2xl cursor-pointer active:scale-[.97]" routerLink="/elegircomidas">
-        Crear Dieta
+    <div class="flex justify-center items-center">
+      <h1 (click)="calendario()" class="px-6 py-3 shadow-lg shadow-gray-500/50 bg-black text-white rounded-lg text-2xl cursor-pointer active:scale-[.97]" routerLink="/elegircomidas">
+        Ir a tu calendario
       </h1>
     </div>
-
-    <div class="col-span-2 flex flex-col items-center">
-      <h1 class="px-6 py-3 shadow-lg shadow-gray-500/50 bg-black text-white rounded-lg text-2xl cursor-pointer active:scale-[.97]">
-        Crear Rutina
-      </h1>
-    </div>
-
-  </div>
 </div>
 </body>
 </html>

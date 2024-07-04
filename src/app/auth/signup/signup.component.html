@@ -16,19 +16,41 @@
       <h1 class="text-3xl font-semibold mb-6 text-black text-center">Crea tu cuenta en Nutricampus</h1>
       <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">Únete a nuestra comunidad y disfruta los beneficios</h1>
 
-      <form action="#" method="POST" class="space-y-4">
+      <form action="#" method="POST" class="space-y-4" (ngSubmit)="saveData()" [formGroup]="registerForm">
         <div>
           <label for="username" class="block text-sm font-medium text-gray-700">Nombre de usuario</label>
-          <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
+          <input formControlName = "user" type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" [(ngModel)]="usuario.nombreUsuario">
+          <div *ngIf="user?.invalid && (user?.dirty || user?.touched)" class="text-danger">
+            <div *ngIf="user?.errors?.['required']">
+              El usuario es requerido
+            </div>
+          </div>
         </div>
         <div>
           <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-          <input type="text" id="email" name="email" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
+          <input formControlName="email" type="text" id="email" name="email" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" [(ngModel)]="usuario.correo">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+            <div *ngIf="email?.errors?.['required']">
+              El email es requerido
+            </div>
+            <div *ngIf="email?.errors?.['email']">
+              Formato invalido
+            </div>
+          </div>
         </div>
         <div>
           <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
-          <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
+          <input formControlName="password" type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" [(ngModel)]="usuario.contra">
+          <div *ngIf="pass?.invalid && (pass?.dirty || pass?.touched)" class="text-danger">
+            <div *ngIf="pass?.errors?.['required']">
+              La contraseña es requerida
+            </div>
+            <div *ngIf="pass?.errors?.['minlength']">
+              El tamaño mínimo es de 8 caracteres
+            </div>
+          </div>
         </div>
+        <p class="text-danger">{{formError}}</p>
         <div>
           <button type="submit" class="w-full bg-[#ade1ae] text-white p-2 rounded-md hover:bg-[#91c993] focus:outline-none focus:bg-[#ade1ae] focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Registrarme</button>
         </div>

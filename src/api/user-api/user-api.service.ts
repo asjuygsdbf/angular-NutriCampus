@@ -1,8 +1,15 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {BehaviorSubject, catchError, lastValueFrom, map, Observable, of, tap, throwError} from "rxjs";
-import {AutenticacionUsuario, BuscarUsuario, CrearUsuario, ObtenerUsuario, TokenResponse, Usuario} from "./interfaces";
-import {environment} from "../../env/env.prod"
+import {
+  AutenticacionUsuario,
+  CrearUsuario,
+  ObtenerUsuarioToken,
+  TokenResponse,
+  Usuario
+} from "./interfaces";
+import {environment} from "../../environments/environment.development";
+import {Cronograma} from "../cronograma-api/interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -55,14 +62,18 @@ export class UserApiService {
     this.currentUserLoginOn.next(false);
   }
 
-  obtenerUsuarioViaToken(obtenerUsuario: ObtenerUsuario) {
+  obtenerUsuarioViaToken(token: ObtenerUsuarioToken) {
     return lastValueFrom(
-      this.httpClient.post<TokenResponse>(environment.urlBack+"/autenticacion/obtener-usuario-token/", obtenerUsuario)
+      this.httpClient.post<TokenResponse>(environment.urlBack+"/autenticacion/obtener-usuario-token/", token)
     );
   }
 
-  buscarPorUsuario(usuario: BuscarUsuario){
-    return lastValueFrom(this.httpClient.post<Usuario>(environment.urlBack+"/usuario/buscar-por-usuario/", usuario));
+  buscarPorUsuario(usuario: string){
+    return lastValueFrom(this.httpClient.get<Usuario>(environment.urlBack+"/usuario/buscar-por-usuario/" + usuario));
+  }
+
+  listarCronogramasPorUsuario(usuario: string){
+    return lastValueFrom(this.httpClient.get<Cronograma[]>(environment.urlBack+"/cronograma/listar-por-usuario/"+usuario));
   }
 
   get userData():Observable<String>{
